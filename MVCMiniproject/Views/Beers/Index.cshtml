@@ -1,0 +1,13 @@
+﻿@model BeersIndexVM[]
+@{
+    ViewData["Title"] = "Beers/Index";
+}
+<div class="container">
+    <h1>Beers/Index</h1>
+    <ul>
+        @foreach (var item in Model)
+        {
+            <li>@item.Name <a asp-controller="beers" asp-action="remove" asp-route-id=@item.Id>Delete beer</a></li>
+        }
+    </ul>
+</div>
