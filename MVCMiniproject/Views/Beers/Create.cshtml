@@ -6,9 +6,11 @@
 @section head {
 }
 
-<div class="container">
+<div class="container d-flex justify-content-center">
     <h1>Add new beer</h1>
-    <form asp-controller="beers" asp-action="create">
+</div>
+<div class="container d-flex justify-content-center">
+    <form asp-controller="beers" asp-action="create" enctype="multipart/form-data">
         <div class="form-group formbox">
             <label asp-for="Name"></label>
             <br />
@@ -37,10 +39,17 @@
             <input class="form-control" asp-for="Container" />
             <span asp-validation-for="Container"></span>
         </div>
+        <div class="form-group formbox">
+            <label asp-for="Image"></label>
+            <input class="form-group" asp-for="Image" />
+            <span asp-validation-for="Image"></span>
+        </div>
         <br />
         <input class="btn btn-success form-control-lg" type="submit" name="btnSubmit" value="Add Beer" />
     </form>
 </div>
+<div asp-validation-summary="All" class="danger jumbotron container-fluid d-flex justify-content-center"></div>
+
 @section scripts  {
     <partial name="_ScriptBox" />
 }

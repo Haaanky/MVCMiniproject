@@ -11,5 +11,6 @@ namespace MVCMiniproject.Models.Entities
         public string OriginCountry { get; set; }
         public decimal Price { get; set; }
         public string Container { get; set; }
+        public string ImgFilePath { get; set; }
     }
 }

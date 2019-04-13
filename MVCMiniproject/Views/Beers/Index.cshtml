@@ -1,13 +1,19 @@
-﻿@model BeersIndexVM[]
+﻿@model BeersIndexVM
 @{
     ViewData["Title"] = "Beers/Index";
 }
-<div class="container">
+<div class="container d-flex justify-content-center">
     <h1>Beers/Index</h1>
-    <ul>
-        @foreach (var item in Model)
-        {
-            <li>@item.Name <a asp-controller="beers" asp-action="remove" asp-route-id=@item.Id>Delete beer</a></li>
-        }
-    </ul>
+</div>
+<div class="container d-flex justify-content-center">
+    <div class="">
+    </div>
+    <div class="">
+        <ul>
+            @foreach (var item in Model.BeersList)
+            {
+                <li><a asp-controller="beers" asp-action="details" asp-route-id=@item.Id>@item.Name</a> <a asp-controller="beers" asp-action="remove" asp-route-id=@item.Id>Delete beer</a></li>
+            }
+        </ul>
+    </div>
 </div>

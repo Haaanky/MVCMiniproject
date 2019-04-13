@@ -44,6 +44,8 @@ namespace MVCMiniproject.Models.Entities
                     .IsRequired()
                     .HasMaxLength(50);
 
+                entity.Property(e => e.ImgFilePath).HasMaxLength(50);
+
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50);

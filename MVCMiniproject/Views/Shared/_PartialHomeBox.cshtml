@@ -1,0 +1,21 @@
+﻿@model BeersIndexItemVM
+@{
+    ViewData["Title"] = "_PartialHomeBox";
+}
+
+<h1>_PartialHomeBox</h1>
+
+<div>
+    <div class="container d-flex justify-content-center">
+        <h2>@Model.Name</h2>
+    </div>
+    <div class="container d-flex justify-content-center">
+        @if (Model.ImgFilePath != null)
+        {
+            <figure class="figure boxsize">
+                <img class="figure-img img-fluid rounded-circle" src="~/uploads/@Model.ImgFilePath" alt="Alternate Text" />
+                <figcaption class="figure-caption text-right">A nice cold @Model.Name.</figcaption>
+            </figure>
+        }
+    </div>
+</div>

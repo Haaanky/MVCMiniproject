@@ -5,3 +5,12 @@
     color: orangered;
 }
 
+body > div > div.danger.jumbotron.container-fluid.d-flex.justify-content-center.validation-summary-errors > ul > li {
+    font-size: 10em;
+    color: red;
+    background-color: orange;
+}
+
+.boxsize {
+    max-width: 300px;
+}

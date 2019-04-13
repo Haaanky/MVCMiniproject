@@ -1,16 +1,17 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
 namespace MVCMiniproject.Models.ViewModels
 {
-    public class BeersIndexVM
+    [Bind(Prefix = nameof(BeersIndexVM.BeersList))]
+    public class BeersIndexItemVM
     {
-        public string Name { get; set; }
         public int Id { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
         public string ImgFilePath { get; set; }
-        public BeersIndexItemVM[] BeersList { get; set; }
-        public BeersDetailsVM ItemDetailsVM { get; set; }
     }
 }

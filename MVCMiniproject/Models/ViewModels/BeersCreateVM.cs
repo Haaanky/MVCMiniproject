@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Http;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -23,5 +24,8 @@ namespace MVCMiniproject.Models.ViewModels
         [Display(Name = "Container, e.g. can or bottle")]
         [Required]
         public string Container { get; set; }
+        public string ImgFilePath { get; set; } // sparar namnet på den uppladdade bilden i databasen
+        [Display(Name ="Image of beer to upload (optional)")]
+        public IFormFile Image { get; set; } // interface för att kunna ta emot en bilduppladdning i form
     }
 }

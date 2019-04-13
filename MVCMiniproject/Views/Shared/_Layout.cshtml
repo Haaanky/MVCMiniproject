@@ -10,21 +10,22 @@
 </head>
 <body>
     <header>
-        <div class="jumbotron container">
+        <div class="jumbotron container-fluid d-flex justify-content-center">
             <h1>Olika öl samma härlighet</h1>
         </div>
-        <div class="container">
+        <div class="container d-flex justify-content-center">
             <nav navbar-nav navbar-expand-lg navbar-light bg-light>
                 <a class="btn btn-primary navbar-brand" role="button" asp-controller="home" asp-action="index">Home/Index</a>
-                <a class="btn btn-primary navbar-brand" role="button" asp-controller="beers" asp-action="index">Beers/Index</a>
-                <a class="btn btn-primary navbar-brand" role="button" asp-controller="beers" asp-action="create">Beers/create</a>
+                <a class="btn btn-danger navbar-brand" role="button" asp-controller="beers" asp-action="index">Beers/Index</a>
+                <a class="btn btn-warning navbar-brand" role="button" asp-controller="beers" asp-action="create">Beers/create</a>
             </nav>
         </div>
     </header>
-    <div>
+    <div container d-flex justify-content-center>
         @RenderBody()
     </div>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     @RenderSection("scripts", false)
 </body>
