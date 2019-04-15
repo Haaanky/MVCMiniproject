@@ -16,9 +16,11 @@ namespace MVCMiniproject.Models.ViewModels
         public decimal Price { get; set; }
         public string Container { get; set; }
         public string ImgFilePath { get; set; }
+        public string Type { get; set; }
+        public string Description { get; set; }
         public override string ToString()
         {
-            return $"{Name}, {CompanyName}, {OriginCountry}, {Price}, {Container}";
+            return $"{Name}, {CompanyName}, {Type}, {OriginCountry}, {Price}, {Container}";
         }
     }
 }

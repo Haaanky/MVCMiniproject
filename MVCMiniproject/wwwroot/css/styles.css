@@ -12,5 +12,41 @@ body > div > div.danger.jumbotron.container-fluid.d-flex.justify-content-center.
 }
 
 .boxsize {
-    max-width: 300px;
+    /*max-height: 300px;
+    max-width: 300px;*/
+    /*object-fit: cover;
+    width: 100%;*/
+    /*height: 200px !important;*/
+}
+
+.figure-img {
+    object-fit: cover;
+    width: auto;
+    height: 300px !important;
+}
+
+.homebox {
+    min-height: 100px;
+}
+
+.home-img {
+    height: 70vh;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+
+.footer {
+    position: absolute;
+    bottom: 5px;
+    width: 100%;
+    white-space: nowrap;
+    height: 60px;
+    line-height: 60px;
 }

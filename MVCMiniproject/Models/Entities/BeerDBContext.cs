@@ -33,7 +33,7 @@ namespace MVCMiniproject.Models.Entities
             modelBuilder.Entity<Beer>(entity =>
             {
                 entity.HasIndex(e => new { e.Name, e.CompanyName, e.Container })
-                    .HasName("UQ__Beer__276B87EAF6850291")
+                    .HasName("UQ__Beer2__276B87EAC1470759")
                     .IsUnique();
 
                 entity.Property(e => e.CompanyName)
@@ -53,6 +53,10 @@ namespace MVCMiniproject.Models.Entities
                 entity.Property(e => e.OriginCountry).HasMaxLength(50);
 
                 entity.Property(e => e.Price).HasColumnType("money");
+
+                entity.Property(e => e.Type)
+                    .IsRequired()
+                    .HasMaxLength(50);
             });
         }
     }

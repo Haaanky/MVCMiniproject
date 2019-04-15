@@ -1,6 +1,6 @@
-﻿@model BeersCreateVM
+﻿@model BeersUpdateVM
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "Update";
 }
 
 @section head {
@@ -10,7 +10,7 @@
     <h1>Add new beer</h1>
 </div>
 <div class="container d-flex justify-content-center">
-    <form asp-controller="beers" asp-action="create" enctype="multipart/form-data" class="needs-validation">
+    <form asp-controller="beers" asp-action="update" enctype="multipart/form-data" class="needs-validation">
         <div class="form-group formbox">
             <label asp-for="Name"></label>
             <br />

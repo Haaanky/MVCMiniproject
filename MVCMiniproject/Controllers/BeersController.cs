@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using MVCMiniproject.Models;
+using MVCMiniproject.Models.Entities;
 using MVCMiniproject.Models.ViewModels;
 
 namespace MVCMiniproject.Controllers
@@ -60,6 +61,25 @@ namespace MVCMiniproject.Controllers
         public IActionResult Details(int id)
         {
             return View(beersService.GetBeerByID(id));
+        }
+        [HttpGet]
+        public IActionResult Update(int id)
+        {
+            return View(beersService.GetBeersUpdateVMByID(id));
+        }
+        [HttpPost]
+        public IActionResult Update(BeersUpdateVM beersUpdateVM)
+        {
+            if (beersUpdateVM.Image?.Length > 0)
+            {
+                var filePath = Path.Combine(hostingEnvironment.WebRootPath, "uploads", beersUpdateVM.Image.FileName);
+                using (var fileStream = new FileStream(filePath, FileMode.Create))
+                {
+                    beersUpdateVM.Image.CopyTo(fileStream);
+                }
+            }
+            beersService.UpdateBeer(beersUpdateVM);
+            return RedirectToAction(nameof(Index));
         }
     }
 }
